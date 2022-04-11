@@ -1,5 +1,5 @@
 # AI Based Tic-Tac-Toe with Minimax algorithm
-Console version of Tic-Tac-Toe game with unbeatable AI. The AI agent uses minimax algorithm improved by alpha-beta-pruning for finding the best possible outcomes.
+Console version of Tic-Tac-Toe game with an unbeatable AI. The AI agent uses minimax algorithm improved by alpha-beta-pruning for finding the best possible outcomes.
 
 ## Description
 - Player plays against AI
