@@ -56,7 +56,7 @@ class TicTacToe:
         for i in range(1,10):
             if self.isSpaceAvailable(board, i):
                 board[i] = computerLetter
-                moveVal = self.minmax(board, 0, False, -1000, 1000, computerLetter)
+                moveVal = self.minimax(board, 0, False, -1000, 1000, computerLetter)
                 board[i] = ' '
 
                 if moveVal > bestVal:
@@ -65,7 +65,7 @@ class TicTacToe:
 
         return bestMove
 
-    def minmax(self, board, depth, isMax, alpha, beta, computerLetter):
+    def minimax(self, board, depth, isMax, alpha, beta, computerLetter):
         # 2-in-1 function which performs either maximizing or minimizing
         # Verifying who playing which letter to properly fill the board from computer
         if computerLetter == 'X':
@@ -88,7 +88,7 @@ class TicTacToe:
             for i in range(1,10):
                 if self.isSpaceAvailable(board, i):
                     board[i] = computerLetter
-                    bestVal = max(bestVal, self.minmax(board, depth+1, not isMax, alpha, beta, computerLetter) - depth)
+                    bestVal = max(bestVal, self.minimax(board, depth+1, not isMax, alpha, beta, computerLetter) - depth)
                     alpha = max(alpha, bestVal)
                     board[i] = ' '
 
@@ -102,7 +102,7 @@ class TicTacToe:
             for i in range(1,10):
                 if self.isSpaceAvailable(board, i):
                     board[i] = playerLetter
-                    bestVal = min(bestVal, self.minmax(board, depth+1, not isMax, alpha, beta, computerLetter) + depth)
+                    bestVal = min(bestVal, self.minimax(board, depth+1, not isMax, alpha, beta, computerLetter) + depth)
                     beta = min(beta, bestVal)
                     board[i] = ' '
 
